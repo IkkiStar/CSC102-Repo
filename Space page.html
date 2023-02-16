@@ -8,6 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UAT Space Page</title>
     <script src="code.js"></script>
+    <style>
+        body{
+            background-color:darkviolet;
+            color:white;
+        }
+        p{
+            font-size: 14pt;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <!-- This is the page title. There should be only 1 <h1> tag on a webpage. -->
@@ -22,6 +32,10 @@
         is clicked. -->
     <input type="button" Value="Click Me" onclick="alert('You clicked me');">
 
+    <p>
+        Welcome, <span id = "userNameBadge"></span>
+    </p>
+
         <!--This will show the current countdown number-->
     <p>
         Countdown: <span id="countdown"></span>
@@ -29,6 +43,9 @@
 
     <script>
         
+        var userInfo = getUserInput();
+        document. getElementById("userNameBadge") .innerHTML = userInfo;
+       
         // This is a short hand to point to the count down element
         var countdownElem = document.getElementById("countdown");
         runTimer(countdownElem);

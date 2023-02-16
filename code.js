@@ -4,6 +4,35 @@ function startButtonClick(){}
 //empty function; code will be added later
 function stopButtonClick(){}
 
+//this function will ask for a first name, last name, and badge number
+//the names need to be less than 20 characters and the badge number nedds to be 3 characters or less than 1000
+function getUserInput(){
+       var fullName = "";
+       var badgeNumber = 0;
+       
+       do{
+        var firstName = prompt("Please enter first name (under 10 characters): ");
+        var lastName = prompt("Please enter last name (under 10 characters): ");
+
+        fullName = firstName + " " + lastName;
+
+        if (fullName.length > 20){
+              alert("Please enter a shorter name. Length was: " + fullName.length);
+        }
+       }
+       while(fullName.length > 20);
+
+       do{
+              badgeNumber = prompt("Please enter your badge number (3 digits max): ");
+
+              if (badgeNumber > 999){
+                     alert("Please enter a badge number with 3 digits or fewer.");
+              }
+       }
+       while(badgeNumber >999);
+
+       return fullName + " " + badgeNumber;
+}
 
 //this is our new countdown function in the .js page
 function runTimer(countdownElem){
