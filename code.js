@@ -1,8 +1,28 @@
-//empty function; code will be added later
-function startButtonClick(){}
+var arrInterval = new Array();
+
 
 //empty function; code will be added later
-function stopButtonClick(){}
+function startButtonClick(){
+       //dont let the user press the start button while countdown is running
+       document.getElementById("btnStart").disabled = true;
+       document.getElementById("btnStop").disabled = false;
+
+       // This is a short hand to point to the count down element
+       var countdownElem = document.getElementById("countdown");
+       runTimer(countdownElem);
+}
+
+//empty function; code will be added later
+function stopButtonClick(){
+       //dont let the user press the stop button when already stopped
+       document.getElementById("btnStart").disabled = false;
+       document.getElementById("btnStop").disabled = true;
+
+       //all intervals when the countdown can be stopped
+       for (counter = 0; counter <11; counter++){
+              clearTimeout(arrInterval[counter]);
+       }
+}
 
 //this function will ask for a first name, last name, and badge number
 //the names need to be less than 20 characters and the badge number nedds to be 3 characters or less than 1000
@@ -47,7 +67,7 @@ function runTimer(countdownElem){
     
     for(var counter=0; counter <11; counter++){
       // Decreases the countdown by 5 on the page
-      setTimeout(function(){
+      arrInterval[counter] = setTimeout(function(){
        // if current time reaches 0 the blastoff alert will pop up and the countdown will say launch successful
        if(currTime == 0){
               alert("Blastoff!");

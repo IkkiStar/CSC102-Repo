@@ -40,15 +40,16 @@
     <p>
         Countdown: <span id="countdown"></span>
     </p>
+        <!--Start & stop buttons. Stop button disabled on start up.-->
+        <button type="button" onclick="startButtonClick();" id="btnStart">Start Countdown</button>
+        <button type="button" onclick="stopButtonClick();" id="btnStop" disabled="true">Stop Countdown</button>
 
     <script>
-        
+        // This displays the user info
         var userInfo = getUserInput();
         document. getElementById("userNameBadge").innerHTML = userInfo;
        
-        // This is a short hand to point to the count down element
-        var countdownElem = document.getElementById("countdown");
-        runTimer(countdownElem);
+        
       
     </script>
 </body>
