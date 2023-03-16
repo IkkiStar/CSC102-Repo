@@ -48,9 +48,17 @@
         // This displays the user info
         var userInfo = getUserInput();
         document. getElementById("userNameBadge").innerHTML = userInfo;
-       
-        
+        //calls the playSound function from js file
+        playSound("us-lab-background.mp3");
       
     </script>
+
+    <!--html way of playing audio-->
+    <!--
+    <audio controls>
+        <source src="us-lab-background.mp3" type="audio/mpeg">
+        Your browser doesn't support audio
+    </audio>
+    -->
 </body>
 </html>
