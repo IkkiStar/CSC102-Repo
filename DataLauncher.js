@@ -1,3 +1,4 @@
+//time in seconds every update will occur (5)
 var timer = 0;
 var theTime = "";
 var time_interval = 5000;
